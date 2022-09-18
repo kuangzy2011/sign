@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 AAAAAAAAAA test remote uploadddddd3333333333
+=======
+AAAAAAAAAA test remote upload
+>>>>>>> 911c114d28ee6c01bcb8d14b98937accd9766a5e
