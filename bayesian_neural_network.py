@@ -357,7 +357,7 @@ def main(argv):
                                   title='mean heldout logprob {:.2f}'
                                   .format(heldout_log_prob))
 
-  model.save('mnist_model')
+  #model.save('mnist_model')
   model.save_weights('model_mnist_bcnn.model', overwrite=True, save_format='tf')
   print(">>training is done...")
 
