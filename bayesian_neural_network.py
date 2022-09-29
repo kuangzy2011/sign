@@ -13,11 +13,8 @@
 # limitations under the License.
 # ============================================================================
 """Trains a Bayesian neural network to classify MNIST digits.
-
 The architecture is LeNet-5 [1].
-
 #### References
-
 [1]: Yann LeCun, Leon Bottou, Yoshua Bengio, and Patrick Haffner.
      Gradient-based learning applied to document recognition.
      _Proceedings of the IEEE_, 1998.
@@ -89,7 +86,6 @@ FLAGS = flags.FLAGS
 
 def plot_weight_posteriors(names, qm_vals, qs_vals, fname):
   """Save a PNG plot with histograms of weight means and stddevs.
-
   Args:
     names: A Python `iterable` of `str` variable names.
       qm_vals: A Python `iterable`, the same length as `names`,
@@ -124,7 +120,6 @@ def plot_weight_posteriors(names, qm_vals, qs_vals, fname):
 def plot_heldout_prediction(input_vals, probs,
                             fname, n=10, title=''):
   """Save a PNG plot visualizing posterior uncertainty on heldout data.
-
   Args:
     input_vals: A `float`-like Numpy `array` of shape
       `[num_heldout] + IMAGE_SHAPE`, containing heldout input images.
@@ -160,7 +155,6 @@ def plot_heldout_prediction(input_vals, probs,
 
 def create_model():
   """Creates a Keras model using the LeNet-5 architecture.
-
   Returns:
       model: Compiled Keras model.
   """
@@ -219,7 +213,6 @@ class MNISTSequence(tf.keras.utils.Sequence):
 
   def __init__(self, data=None, batch_size=128, fake_data_size=None):
     """Initializes the sequence.
-
     Args:
       data: Tuple of numpy `array` instances, the first representing images and
             the second labels.
@@ -238,7 +231,6 @@ class MNISTSequence(tf.keras.utils.Sequence):
   @staticmethod
   def __generate_fake_data(num_images, num_classes):
     """Generates fake data in the shape of the MNIST dataset for unittest.
-
     Args:
       num_images: Integer, the number of fake images to be generated.
       num_classes: Integer, the number of classes to be generate.
@@ -258,11 +250,9 @@ class MNISTSequence(tf.keras.utils.Sequence):
   @staticmethod
   def __preprocessing(images, labels):
     """Preprocesses image and labels data.
-
     Args:
       images: Numpy `array` representing the image data.
       labels: Numpy `array` representing the labels data (range 0-9).
-
     Returns:
       images: Numpy `array` representing the image data, normalized
               and expanded for convolutional network input.
@@ -356,10 +346,8 @@ def main(argv):
                                           epoch, step)),
                                   title='mean heldout logprob {:.2f}'
                                   .format(heldout_log_prob))
-
-  #model.save('mnist_model')
+  model.save('mnist_model')
   model.save_weights('model_mnist_bcnn.model', overwrite=True, save_format='tf')
-  print(">>training is done...")
 
 
 if __name__ == '__main__':
