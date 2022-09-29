@@ -362,10 +362,10 @@ def main(argv):
 
   #convert to tflite
   #https://blog.csdn.net/bjbz_cxy/article/details/120503631
-  converter = tf.lite.TFLiteConverter.from_keras_model(model)
-  tflite_model = converter.convert()
+  #converter = tf.lite.TFLiteConverter.from_keras_model(model)
+  #tflite_model = converter.convert()
  
-  open("./model_mnist_bcnn.tflite","wb").write(tflite_model)
+  #open("./model_mnist_bcnn.tflite","wb").write(tflite_model)
   print(">>training is done...")
 
 
