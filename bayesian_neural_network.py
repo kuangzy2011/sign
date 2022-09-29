@@ -288,6 +288,11 @@ def main(argv):
     heldout_seq = MNISTSequence(batch_size=FLAGS.batch_size,
                                 fake_data_size=NUM_HELDOUT_EXAMPLES)
   else:
+    #(x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
+    #assert x_train.shape == (60000, 28, 28)
+    #assert x_test.shape == (10000, 28, 28)
+    #assert y_train.shape == (60000,)
+    #assert y_test.shape == (10000,)     
     train_set, heldout_set = tf.keras.datasets.mnist.load_data()
     train_seq = MNISTSequence(data=train_set, batch_size=FLAGS.batch_size)
     heldout_seq = MNISTSequence(data=heldout_set, batch_size=FLAGS.batch_size)
