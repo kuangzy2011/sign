@@ -358,13 +358,10 @@ def main(argv):
                                   .format(heldout_log_prob))
 
   model.save_weights('model_mnist_bcnn.model', overwrite=True, save_format='tf')
-  #Model.load_weights(filepath, by_name=False, skip_mismatch=False, options=None)
-
   #convert to tflite
   #https://blog.csdn.net/bjbz_cxy/article/details/120503631
   #converter = tf.lite.TFLiteConverter.from_keras_model(model)
-  #tflite_model = converter.convert()
- 
+  #tflite_model = converter.convert() 
   #open("./model_mnist_bcnn.tflite","wb").write(tflite_model)
   print(">>training is done...")
 
