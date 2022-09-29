@@ -117,7 +117,7 @@ def plot_weight_posteriors(names, qm_vals, qs_vals, fname):
   ax.set_xlim([0, 1.])
 
   fig.tight_layout()
-  canvas.print_figure(fname, format='png')
+  canvas.print_figure(fname, format='jpg')
   print('saved {}'.format(fname))
 
 
@@ -154,7 +154,7 @@ def plot_heldout_prediction(input_vals, probs,
   fig.suptitle(title)
   fig.tight_layout()
 
-  canvas.print_figure(fname, format='png')
+  canvas.print_figure(fname, format='jpg')
   print('saved {}'.format(fname))
 
 
@@ -347,12 +347,12 @@ def main(argv):
           plot_weight_posteriors(names, qm_vals, qs_vals,
                                  fname=os.path.join(
                                      FLAGS.model_dir,
-                                     'epoch{}_step{:05d}_weights.png'.format(
+                                     'epoch{}_step{:05d}_weights.jpg'.format(
                                          epoch, step)))
           plot_heldout_prediction(heldout_seq.images, probs.numpy(),
                                   fname=os.path.join(
                                       FLAGS.model_dir,
-                                      'epoch{}_step{}_pred.png'.format(
+                                      'epoch{}_step{}_pred.jpg'.format(
                                           epoch, step)),
                                   title='mean heldout logprob {:.2f}'
                                   .format(heldout_log_prob))
