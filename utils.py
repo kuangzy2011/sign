@@ -3,4 +3,4 @@ class Utils():
         print('>>call Utils init...')
     
     def show(self):
-        printf('>>call Utils show...')
+        print('>>call Utils show...')
