@@ -3,7 +3,7 @@ import torchvision
 from torch.distributions.multivariate_normal import MultivariateNormal
 import numpy as np
 import torch.nn.functional as F
-from backpack import extend
+#from backpack import extend
 from backpack.extensions import KFAC, DiagHessian, DiagGGNMC
 from sklearn.metrics import roc_auc_score
 import matplotlib.pyplot as plt
