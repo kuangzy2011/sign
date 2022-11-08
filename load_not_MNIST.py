@@ -26,7 +26,6 @@ class notMNIST(Dataset):
         self.transform = transform
         
         Images, Y = [], []
-        #os.mkdir(root)
         folders = os.listdir(root)
 
         for folder in folders:
